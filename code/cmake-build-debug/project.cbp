@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="project"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project">
+				<Option output="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/bin/project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/include"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
+					<CompileFile command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project/fast">
+				<Option output="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/bin/project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/include"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
+					<CompileFile command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/new file/semester7&amp;8/Computer Graphics/CW3/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/camera.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/camera.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/keyboard.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/keyboard.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/main.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/main.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/monitor.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/monitor.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CW3/project/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

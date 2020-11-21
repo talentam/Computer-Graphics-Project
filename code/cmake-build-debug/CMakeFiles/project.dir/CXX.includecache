@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/gl/freeglut_std.h
+windows.h
+-
+EGL/egl.h
+-
+GLES/gl.h
+-
+GLES2/gl2.h
+-
+OpenGL/gl.h
+-
+OpenGL/glu.h
+-
+GL/gl.h
+-
+GL/glu.h
+-
+stdlib.h
+-
+
+../include/gl/glut.h
+freeglut_std.h
+../include/gl/freeglut_std.h
+
+D:/new file/semester7&8/Computer Graphics/CW3/project/monitor.cpp
+gl/glut.h
+-
+stdio.h
+-
+
