@@ -227,53 +227,6 @@ GLint Period[6][6] = {{0, 0, 0, 0, 0, 0},
                       {0, 1, 0, 0, 0, 0},
                       {0, 0, 0, 0, 0, 0}};
 
-
-// each box contain 6*6 pixels
-void drawLetter(void){
-    int numOfPixels = int(boxSideLen/pixelSideLen);
-
-    for(int m = 0; m < numOfPixels; m++){
-        glPushMatrix();
-        glTranslatef(m*pixelSideLen, 0, 0);
-        for(int n = 0; n < numOfPixels; n++){
-            glTranslatef(0, pixelSideLen,0);
-//            glColor3ub(1, 0, 0);
-//            glutSolidCube(0.2);
-            glBegin(GL_POLYGON);
-                glNormal3d(0.0f, 0.0f, 1.0f);
-                glColor3f(   1,  1, 1);
-                glVertex3f(  0, 0, 0 );
-                glVertex3f(  0.2, 0, 0 );
-                glVertex3f(  0.2, 0.2, 0 );
-                glVertex3f(  0, 0.2, 0 );
-            glEnd();
-        }
-        glPopMatrix();
-    }
-}
-
-void drawBlank(){
-    int numOfPixels = int(boxSideLen/pixelSideLen);
-    for(int m = 0; m < numOfPixels; m++){
-        glPushMatrix();
-        glTranslatef(m*pixelSideLen, 0, 0);
-        for(int n = 0; n < numOfPixels; n++){
-            glTranslatef(0, pixelSideLen,0);
-//            glColor3ub(1, 1, 1);
-//            glutSolidCube(0.2);
-            glBegin(GL_POLYGON);
-                glNormal3d(0.0f, 0.0f, 1.0f);
-                glColor3f(   0,  0, 0);
-                glVertex3f(  0, 0, 0 );
-                glVertex3f(  0.2, 0, 0 );
-                glVertex3f(  0.2, 0.2, 0 );
-                glVertex3f(  0, 0.2, 0 );
-            glEnd();
-        }
-        glPopMatrix();
-    }
-}
-
 void initMonitor(void){
     for(int i = 0; i < height; i++){
         for(int j = 0; j < width; j++){
@@ -343,7 +296,7 @@ void drawBox(int letter){
 }
 
 // the monitor consists of 20*15 boxes.
-void drawBoxes(void){
+void drawScreen(void){
     for(int i = 0; i < height; i++){
         glPushMatrix();
         glTranslatef(0, -i*boxSideLen, 0);
@@ -355,30 +308,15 @@ void drawBoxes(void){
     }
 }
 
+void drawBorder(void){
+
+}
 
 
 void drawMonitor(void){
-//    glPushMatrix();
-//        glBegin(GL_POLYGON);
-//            glNormal3d(0.0f, 0.0f, 1.0f);
-//            glColor3f(   1,  1, 0);
-//            glVertex3f(  -10, 10, -2 );
-//            glVertex3f(  34, 10, -2 );
-//            glVertex3f(  34, -28, -2 );
-//            glVertex3f(  -10, -28, -2 );
-//        glEnd();
-//    glPopMatrix();
     glPushMatrix();
-        glColor3ub(255, 255, 255);
-//        printf("X: %d   Y: %d\n", currentLetter_X, currentLetter_Y);
-        for(int i = 0; i < height; i++){
-            for(int j = 0; j < width; j++){
-                printf("%d ", letterList[i][j]);
-            }
-            printf("\n");
-        }
-        printf("\n");
-        drawBoxes();
+        drawBorder();
+        drawScreen();
     glPopMatrix();
 }
 

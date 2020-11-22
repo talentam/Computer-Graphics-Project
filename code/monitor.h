@@ -3,21 +3,17 @@
 
 extern GLint width;
 extern GLint height;
-extern GLint backSpace;
 extern GLint currentLetter_X;
 extern GLint currentLetter_Y;
-extern GLint currentDisplay;
 extern GLint currentLetter;
 extern GLint currentLetter_num;
 extern GLint letterList[15][20];
-//extern struct box;
-//extern struct boxes;
 
 void initMonitor(void);
 void drawMonitor(void);
-void drawBoxes(void);
-void drawLetter(void);
-void drawBlank(void);
+void drawBox(int letter);
+void drawBorder(void);
+void drawScreen(void);
 
 
 
