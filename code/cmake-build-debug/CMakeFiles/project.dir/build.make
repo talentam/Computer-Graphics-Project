@@ -62,10 +62,10 @@ RM = "D:\CLion\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\new file\semester7&8\Computer Graphics\CW3\project"
+CMAKE_SOURCE_DIR = "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug"
+CMAKE_BINARY_DIR = "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/project.dir/depend.make
@@ -79,58 +79,58 @@ include CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
 CMakeFiles/project.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/main.cpp.obj"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\main.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CW3\project\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/main.cpp.obj"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\main.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\main.cpp"
 
 CMakeFiles/project.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/main.cpp.i"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CW3\project\main.cpp" > CMakeFiles\project.dir\main.cpp.i
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\main.cpp" > CMakeFiles\project.dir\main.cpp.i
 
 CMakeFiles/project.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/main.cpp.s"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CW3\project\main.cpp" -o CMakeFiles\project.dir\main.cpp.s
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\main.cpp" -o CMakeFiles\project.dir\main.cpp.s
 
 CMakeFiles/project.dir/monitor.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/monitor.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
 CMakeFiles/project.dir/monitor.cpp.obj: ../monitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project.dir/monitor.cpp.obj"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\monitor.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CW3\project\monitor.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project.dir/monitor.cpp.obj"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\monitor.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\monitor.cpp"
 
 CMakeFiles/project.dir/monitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/monitor.cpp.i"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CW3\project\monitor.cpp" > CMakeFiles\project.dir\monitor.cpp.i
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\monitor.cpp" > CMakeFiles\project.dir\monitor.cpp.i
 
 CMakeFiles/project.dir/monitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/monitor.cpp.s"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CW3\project\monitor.cpp" -o CMakeFiles\project.dir\monitor.cpp.s
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\monitor.cpp" -o CMakeFiles\project.dir\monitor.cpp.s
 
 CMakeFiles/project.dir/camera.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/camera.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
 CMakeFiles/project.dir/camera.cpp.obj: ../camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project.dir/camera.cpp.obj"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\camera.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CW3\project\camera.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project.dir/camera.cpp.obj"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\camera.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\camera.cpp"
 
 CMakeFiles/project.dir/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/camera.cpp.i"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CW3\project\camera.cpp" > CMakeFiles\project.dir\camera.cpp.i
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\camera.cpp" > CMakeFiles\project.dir\camera.cpp.i
 
 CMakeFiles/project.dir/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/camera.cpp.s"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CW3\project\camera.cpp" -o CMakeFiles\project.dir\camera.cpp.s
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\camera.cpp" -o CMakeFiles\project.dir\camera.cpp.s
 
 CMakeFiles/project.dir/keyboard.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/keyboard.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
 CMakeFiles/project.dir/keyboard.cpp.obj: ../keyboard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project.dir/keyboard.cpp.obj"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\keyboard.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CW3\project\keyboard.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project.dir/keyboard.cpp.obj"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\keyboard.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\keyboard.cpp"
 
 CMakeFiles/project.dir/keyboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/keyboard.cpp.i"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CW3\project\keyboard.cpp" > CMakeFiles\project.dir\keyboard.cpp.i
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\keyboard.cpp" > CMakeFiles\project.dir\keyboard.cpp.i
 
 CMakeFiles/project.dir/keyboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/keyboard.cpp.s"
-	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CW3\project\keyboard.cpp" -o CMakeFiles\project.dir\keyboard.cpp.s
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\keyboard.cpp" -o CMakeFiles\project.dir\keyboard.cpp.s
 
 # Object files for target project
 project_OBJECTS = \
@@ -150,7 +150,7 @@ bin/project.exe: CMakeFiles/project.dir/build.make
 bin/project.exe: CMakeFiles/project.dir/linklibs.rsp
 bin/project.exe: CMakeFiles/project.dir/objects1.rsp
 bin/project.exe: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin\project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin\project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -163,6 +163,6 @@ CMakeFiles/project.dir/clean:
 .PHONY : CMakeFiles/project.dir/clean
 
 CMakeFiles/project.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\new file\semester7&8\Computer Graphics\CW3\project" "D:\new file\semester7&8\Computer Graphics\CW3\project" "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug" "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug" "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles\project.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code" "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code" "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug" "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug" "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles\project.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/project.dir/depend
 

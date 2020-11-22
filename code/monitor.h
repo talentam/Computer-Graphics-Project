@@ -9,7 +9,7 @@ extern GLint currentLetter_Y;
 extern GLint currentDisplay;
 extern GLint currentLetter;
 extern GLint currentLetter_num;
-extern GLint letterList[20][15];
+extern GLint letterList[15][20];
 //extern struct box;
 //extern struct boxes;
 

@@ -67,10 +67,10 @@ RM = "D:\CLion\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\new file\semester7&8\Computer Graphics\CW3\project"
+CMAKE_SOURCE_DIR = "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug"
+CMAKE_BINARY_DIR = "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles" "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\new file\semester7&8\Computer Graphics\CW3\project\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

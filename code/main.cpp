@@ -67,7 +67,36 @@ int main(int argc,char* argv[]){
     init();
     glutKeyboardFunc(&KeyBoards);
     glutSpecialFunc(&SpecialKey);
+    ////////////////////
+//    int A1[6][6] = {{1, 0, 0, 0, 1, 0},
+//                     {0, 1, 0, 1, 0, 0},
+//                     {0, 0, 1, 0, 0, 0},
+//                     {0, 0, 1, 0, 0, 0},
+//                     {0, 0, 1, 0, 0, 0},
+//                     {0, 0, 0, 0, 0, 0}};
+//
+//    int A2[6][6] = {{1, 1, 1, 1, 1, 0},
+//                     {0, 0, 0, 1, 0, 0},
+//                     {0, 0, 1, 0, 0, 0},
+//                     {0, 1, 0, 0, 0, 0},
+//                     {1, 1, 1, 1, 1, 0},
+//                     {0, 0, 0, 0, 0, 0}};
+//
+//    int *p = &A1[0][0]; //指向A1[0][0]的指针
+//    int *k = &A2[0][0];
+//    int *q[2];
+//
+//    q[0] = &A1[0][0];
+//    q[1] = &A2[0][0];
+//    for(int i = 0; i < 6; i++){
+//        for(int j = 0; j < 6; j++){
+//            printf("%d ", *(q[1]+i*6+j));
+//        }
+//        printf("\n");
+//    }
 
+
+    //////////////////////
     glutDisplayFunc(&display);
 //    glutReshapeFunc(reshape);
 //    glutTimerFunc(1000/frameRate, timer, 0);
