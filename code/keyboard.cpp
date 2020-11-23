@@ -39,6 +39,7 @@ void SpecialKey(GLint key,GLint x,GLint y)
             glLoadIdentity();
             eye_x += cameraSpeed;
             lookAt_x += cameraSpeed;
+//            printf("eye_x: %d, eye_y %d eye_z %d\n", eye_x, eye_y, eye_z);
             gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
             glutPostRedisplay();
             break;
@@ -278,6 +279,20 @@ void KeyBoards(unsigned char key,int x,int y)
             gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
             glutPostRedisplay();
             break;
+//        case '=':
+//            glMatrixMode(GL_MODELVIEW);
+//            glLoadIdentity();
+//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+//            angle += 10;
+//            glutPostRedisplay();
+//            break;
+//        case '-':
+//            glMatrixMode(GL_MODELVIEW);
+//            glLoadIdentity();
+//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+//            angle -= 10;
+//            glutPostRedisplay();
+//            break;
 //        case 'j':
 //            glMatrixMode(GL_MODELVIEW);
 //            glLoadIdentity();

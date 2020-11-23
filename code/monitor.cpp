@@ -4,6 +4,7 @@
 
 #include <gl/glut.h>
 #include <stdio.h>
+#include "main.h"
 
 GLint width = 20;         //number of boxes in one row
 GLint height = 15;        //number of boxes in one column
@@ -281,7 +282,7 @@ void drawBox(int letter){
                 if(*(writing[letter]+m*6+n) == 1){
                     glColor3f(   1,  1, 1);
                 }else{
-                    glColor3f(   0,  0, 0);
+                    glColor3f(   0.2,  0.2, 0.2);
                 }
                 glBegin(GL_POLYGON);
                     glNormal3d(0.0f, 0.0f, 1.0f);
@@ -308,14 +309,31 @@ void drawScreen(void){
     }
 }
 
-void drawBorder(void){
+void drawRoom(void){
+    glColor3ub(255, 255, 255);
+    glPushMatrix();
+        glTranslatef(0, 0, 5);
+        glutSolidTeapot(3);
+    glPopMatrix();
 
+    glBegin(GL_POLYGON);
+    glNormal3d(0.0f, 0.0f, 1.0f);
+    glColor3ub(100, 0, 0);
+    glVertex3f(  20, 100, -10 );
+    glVertex3f(  20, -100, -10 );
+    glVertex3f(  100, -100, -10 );
+    glVertex3f(  100, 100, -10 );
+    glEnd();
+//    printf("eye_x: %d, eye_y %d eye_z %d\n", eye_x, eye_y, eye_z);
 }
 
 
 void drawMonitor(void){
+//    printf("eye_x: %f, eye_y %f eye_z %f\n", eye_x, eye_y, eye_z);
     glPushMatrix();
-        drawBorder();
+        drawRoom();
+    glPopMatrix();
+    glPushMatrix();
         drawScreen();
     glPopMatrix();
 }

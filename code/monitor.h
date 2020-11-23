@@ -12,7 +12,7 @@ extern GLint letterList[15][20];
 void initMonitor(void);
 void drawMonitor(void);
 void drawBox(int letter);
-void drawBorder(void);
+void drawRoom(void);
 void drawScreen(void);
 
 

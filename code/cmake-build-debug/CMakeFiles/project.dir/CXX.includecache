@@ -30,9 +30,29 @@ stdlib.h
 freeglut_std.h
 ../include/gl/freeglut_std.h
 
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/keyboard.h
+
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.cpp
+stdio.h
+-
+gl/glut.h
+-
+monitor.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/monitor.h
+keyboard.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/keyboard.h
+
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h
+gl/glut.h
+-
+
 D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/monitor.cpp
 gl/glut.h
 -
 stdio.h
 -
+main.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h
+
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/monitor.h
 

@@ -16,6 +16,7 @@ extern GLfloat up_x;
 extern GLfloat up_y;
 extern GLfloat up_z;
 extern GLfloat cameraSpeed;
+//extern GLfloat angle;
 
 void display(void);
 //void reshape(int w, int h);
