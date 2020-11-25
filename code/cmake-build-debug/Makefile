@@ -169,6 +169,33 @@ camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
+desk.obj: desk.cpp.obj
+
+.PHONY : desk.obj
+
+# target to build an object file
+desk.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/desk.cpp.obj
+.PHONY : desk.cpp.obj
+
+desk.i: desk.cpp.i
+
+.PHONY : desk.i
+
+# target to preprocess a source file
+desk.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/desk.cpp.i
+.PHONY : desk.cpp.i
+
+desk.s: desk.cpp.s
+
+.PHONY : desk.s
+
+# target to generate assembly for a file
+desk.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/desk.cpp.s
+.PHONY : desk.cpp.s
+
 keyboard.obj: keyboard.cpp.obj
 
 .PHONY : keyboard.obj
@@ -250,6 +277,33 @@ monitor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/monitor.cpp.s
 .PHONY : monitor.cpp.s
 
+room.obj: room.cpp.obj
+
+.PHONY : room.obj
+
+# target to build an object file
+room.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/room.cpp.obj
+.PHONY : room.cpp.obj
+
+room.i: room.cpp.i
+
+.PHONY : room.i
+
+# target to preprocess a source file
+room.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/room.cpp.i
+.PHONY : room.cpp.i
+
+room.s: room.cpp.s
+
+.PHONY : room.s
+
+# target to generate assembly for a file
+room.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/room.cpp.s
+.PHONY : room.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -262,6 +316,9 @@ help:
 	@echo ... camera.obj
 	@echo ... camera.i
 	@echo ... camera.s
+	@echo ... desk.obj
+	@echo ... desk.i
+	@echo ... desk.s
 	@echo ... keyboard.obj
 	@echo ... keyboard.i
 	@echo ... keyboard.s
@@ -271,6 +328,9 @@ help:
 	@echo ... monitor.obj
 	@echo ... monitor.i
 	@echo ... monitor.s
+	@echo ... room.obj
+	@echo ... room.i
+	@echo ... room.s
 .PHONY : help
 
 

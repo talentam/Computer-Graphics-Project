@@ -88,6 +88,12 @@
 		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/camera.h">
 			<Option target="project"/>
 		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.h">
+			<Option target="project"/>
+		</Unit>
 		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/keyboard.cpp">
 			<Option target="project"/>
 		</Unit>
@@ -104,6 +110,12 @@
 			<Option target="project"/>
 		</Unit>
 		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/monitor.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/room.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/room.h">
 			<Option target="project"/>
 		</Unit>
 		<Unit filename="D:/new file/semester7&amp;8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/CMakeLists.txt">

@@ -132,12 +132,42 @@ CMakeFiles/project.dir/keyboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/keyboard.cpp.s"
 	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\keyboard.cpp" -o CMakeFiles\project.dir\keyboard.cpp.s
 
+CMakeFiles/project.dir/desk.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/desk.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
+CMakeFiles/project.dir/desk.cpp.obj: ../desk.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project.dir/desk.cpp.obj"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\desk.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\desk.cpp"
+
+CMakeFiles/project.dir/desk.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/desk.cpp.i"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\desk.cpp" > CMakeFiles\project.dir\desk.cpp.i
+
+CMakeFiles/project.dir/desk.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/desk.cpp.s"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\desk.cpp" -o CMakeFiles\project.dir\desk.cpp.s
+
+CMakeFiles/project.dir/room.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/room.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
+CMakeFiles/project.dir/room.cpp.obj: ../room.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project.dir/room.cpp.obj"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\room.cpp.obj -c "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\room.cpp"
+
+CMakeFiles/project.dir/room.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/room.cpp.i"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\room.cpp" > CMakeFiles\project.dir\room.cpp.i
+
+CMakeFiles/project.dir/room.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/room.cpp.s"
+	D:\MinGW\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\room.cpp" -o CMakeFiles\project.dir\room.cpp.s
+
 # Object files for target project
 project_OBJECTS = \
 "CMakeFiles/project.dir/main.cpp.obj" \
 "CMakeFiles/project.dir/monitor.cpp.obj" \
 "CMakeFiles/project.dir/camera.cpp.obj" \
-"CMakeFiles/project.dir/keyboard.cpp.obj"
+"CMakeFiles/project.dir/keyboard.cpp.obj" \
+"CMakeFiles/project.dir/desk.cpp.obj" \
+"CMakeFiles/project.dir/room.cpp.obj"
 
 # External object files for target project
 project_EXTERNAL_OBJECTS =
@@ -146,11 +176,13 @@ bin/project.exe: CMakeFiles/project.dir/main.cpp.obj
 bin/project.exe: CMakeFiles/project.dir/monitor.cpp.obj
 bin/project.exe: CMakeFiles/project.dir/camera.cpp.obj
 bin/project.exe: CMakeFiles/project.dir/keyboard.cpp.obj
+bin/project.exe: CMakeFiles/project.dir/desk.cpp.obj
+bin/project.exe: CMakeFiles/project.dir/room.cpp.obj
 bin/project.exe: CMakeFiles/project.dir/build.make
 bin/project.exe: CMakeFiles/project.dir/linklibs.rsp
 bin/project.exe: CMakeFiles/project.dir/objects1.rsp
 bin/project.exe: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin\project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\new file\semester7&8\Computer Graphics\CourseWork3\Computer-Graphics-Project\code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable bin\project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

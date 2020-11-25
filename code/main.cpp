@@ -2,14 +2,24 @@
 #include <gl/glut.h>
 #include "monitor.h"
 #include "keyboard.h"
+#include "desk.h"
+#include "room.h"
 //#include "camera.h"
 
-GLfloat eye_x = 0;
+//GLfloat eye_x = 0;
+//GLfloat eye_y = 0;
+//GLfloat eye_z = 50;
+//GLfloat lookAt_x = 0;
+//GLfloat lookAt_y = 0;
+//GLfloat lookAt_z = 0;
+GLfloat eye_x = -50;
 GLfloat eye_y = 0;
-GLfloat eye_z = 50;
-GLfloat lookAt_x = 0;
+GLfloat eye_z = 200;
+GLfloat lookAt_x = -50;
 GLfloat lookAt_y = 0;
 GLfloat lookAt_z = 0;
+
+
 GLfloat up_x = 0;
 GLfloat up_y = 1;
 GLfloat up_z = 0;
@@ -35,7 +45,9 @@ void display(void){
 //        glVertex3f(  10, 10, 10 );
 //    glEnd();
 //    glColor3ub(255, 255, 255);
+    drawRoom();
     drawMonitor();
+    drawDesk();
     glutSwapBuffers();
 }
 
@@ -49,15 +61,41 @@ void init(void)
 //    glColor4f(0,0,1,1);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(65,1,0.01,200);
+    gluPerspective(65,1,0.01,300);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(eye_x,eye_y,eye_z,lookAt_x,lookAt_y,lookAt_z,up_x,up_y,up_z);
     initMonitor();
+
+    // lighting settings
+
+    glShadeModel(GL_SMOOTH);
     glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-    glEnable(GL_DEPTH_TEST);
+//    glEnable(GL_LIGHTING);
+//    glEnable(GL_LIGHT0);
+//    glEnable(GL_DEPTH_TEST);
+    GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };  //镜面反射参数
+    GLfloat mat_shininess[] = { 50.0 };               //高光指数
+    GLfloat light_position[] = { 1.0, 1.0, 20, 0.0 };
+    GLfloat white_light[] = { 1, 1, 1, 1.0 };   //灯位置(1,1,1), 最后1-开关
+    GLfloat Light_Model_Ambient[] = { 0.2, 0.2, 0.2, 1.0 }; //环境光参数
+
+    glClearColor(0.0, 0.0, 0.0, 0.0);  //背景色
+    glShadeModel(GL_SMOOTH);           //多变性填充模式
+
+//    材质属性
+    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+
+//    灯光设置
+    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, white_light);   //散射光属性
+    glLightfv(GL_LIGHT0, GL_SPECULAR, white_light);  //镜面反射光
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, Light_Model_Ambient);  //环境光参数
+
+//    glEnable(GL_LIGHTING);   //开关:使用光
+//    glEnable(GL_LIGHT0);     //打开0#灯
+    glEnable(GL_DEPTH_TEST); //打开深度测试
 }
 
 void reshape(int w, int h){

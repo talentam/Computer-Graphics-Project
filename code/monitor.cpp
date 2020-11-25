@@ -2,6 +2,11 @@
 // Created by GIGABYTE on 2020/11/19.
 //
 
+/////////////////
+//原点translate(1.4, 0.2, 0)可以到屏幕左上角
+/////////////////
+
+
 #include <gl/glut.h>
 #include <stdio.h>
 #include "main.h"
@@ -278,19 +283,19 @@ void drawBox(int letter){
         glTranslatef(0, -m*pixelSideLen, 0);
         for(int n = 0; n < numOfPixels; n++){
             glTranslatef(pixelSideLen, 0,0);
-                // display the letter captured from keyboard
-                if(*(writing[letter]+m*6+n) == 1){
-                    glColor3f(   1,  1, 1);
-                }else{
-                    glColor3f(   0.2,  0.2, 0.2);
-                }
-                glBegin(GL_POLYGON);
-                    glNormal3d(0.0f, 0.0f, 1.0f);
-                    glVertex3f(  0, 0, 0 );
-                    glVertex3f(  0.2, 0, 0 );
-                    glVertex3f(  0.2, 0.2, 0 );
-                    glVertex3f(  0, 0.2, 0 );
-                glEnd();
+            // display the letter captured from keyboard
+            if(*(writing[letter]+m*6+n) == 1){
+                glColor3f(   1,  1, 1);
+            }else{
+                glColor3f(   0.2,  0.2, 0.2);
+            }
+            glBegin(GL_POLYGON);
+            glNormal3d(0.0f, 0.0f, 1.0f);
+            glVertex3f(  0, 0, 0 );
+            glVertex3f(  0.2, 0, 0 );
+            glVertex3f(  0.2, 0.2, 0 );
+            glVertex3f(  0, 0.2, 0 );
+            glEnd();
         }
         glPopMatrix();
     }
@@ -298,43 +303,118 @@ void drawBox(int letter){
 
 // the monitor consists of 20*15 boxes.
 void drawScreen(void){
-    for(int i = 0; i < height; i++){
+    glTranslatef(0, 0, 0.5);
+    for(int i = 0; i < height+2; i++){
         glPushMatrix();
         glTranslatef(0, -i*boxSideLen, 0);
-        for(int j = 0; j < width; j++){
+        for(int j = 0; j < width+2; j++){
             glTranslatef(boxSideLen, 0,0);
-            drawBox(letterList[i][j]);
+            if(i == 0 | j == 0| i == height+1 | j == width+1){
+                int a = 27;
+                drawBox(a);
+            }else{
+                drawBox(letterList[i-1][j-1]);
+            }
         }
         glPopMatrix();
     }
 }
 
-void drawRoom(void){
-    glColor3ub(255, 255, 255);
-    glPushMatrix();
-        glTranslatef(0, 0, 5);
-        glutSolidTeapot(3);
-    glPopMatrix();
+//void drawRoom(void){
+//    glColor3ub(255, 255, 255);
+////    glPushMatrix();
+////        glTranslatef(0, 0, 5);
+////        glutSolidSphere(0.1, 20, 20);
+////    glPopMatrix();
+//
+//    glBegin(GL_POLYGON);
+//    glNormal3d(0.0f, 0.0f, 1.0f);
+//    glColor3ub(255, 255, 255);
+//    glVertex3f(  -100, 100, -10 );
+//    glVertex3f(  -100, -100, -10 );
+//    glVertex3f(  100, -100, -10 );
+//    glVertex3f(  100, 100, -10 );
+//    glEnd();
+////    printf("eye_x: %d, eye_y %d eye_z %d\n", eye_x, eye_y, eye_z);
+//}
 
-    glBegin(GL_POLYGON);
-    glNormal3d(0.0f, 0.0f, 1.0f);
-    glColor3ub(100, 0, 0);
-    glVertex3f(  20, 100, -10 );
-    glVertex3f(  20, -100, -10 );
-    glVertex3f(  100, -100, -10 );
-    glVertex3f(  100, 100, -10 );
-    glEnd();
-//    printf("eye_x: %d, eye_y %d eye_z %d\n", eye_x, eye_y, eye_z);
+void drawBoundary(){
+
+    glPushMatrix();
+        // back board
+        glPushMatrix();
+            glColor3ub(0, 0, 0);
+            glTranslatef(1.4, 0.2, -0.5);
+            glTranslatef(22.0/2*boxSideLen, -17.0/2*boxSideLen, 0);
+            glScalef(22, 17, 0.1);
+            glutSolidCube(1.2);
+        glPopMatrix();
+
+        glColor3ub(0, 0, 0);
+        glTranslatef(0.2, 1.4, 0);
+        // top boundary
+        glPushMatrix();
+            glTranslatef(12*boxSideLen, -0.5*boxSideLen, 0);
+            glScalef(24, 1, 1);
+            glutSolidCube(1.2);
+        glPopMatrix();
+        // bottom boundary
+        glPushMatrix();
+            glTranslatef(12*boxSideLen, -18.5*boxSideLen, 0);
+            glScalef(24, 1, 1);
+            glutSolidCube(1.2);
+        glPopMatrix();
+        // left boundary
+        glPushMatrix();
+            glTranslatef(0.5*boxSideLen, -9.5*boxSideLen, 0);
+            glScalef(1, 17, 1);
+            glutSolidCube(1.2);
+        glPopMatrix();
+        // right boundary
+        glPushMatrix();
+            glTranslatef(23.5*boxSideLen, -9.5*boxSideLen, 0);
+            glScalef(1, 17, 1);
+            glutSolidCube(1.2);
+        glPopMatrix();
+    glPopMatrix();
 }
 
+void drawSupport(void){
+    glPushMatrix();
+        glTranslatef(0.2, 1.4, 0);
+        glTranslatef((width+4)/2*boxSideLen, -(height+4)*boxSideLen, 0);
+        glColor3ub(230, 230, 230);
+        glTranslatef(0, -3*boxSideLen, 0);
+        glPushMatrix();
+            glScalef(4*boxSideLen, 6*boxSideLen, boxSideLen);
+            glutSolidCube(1);
+        glPopMatrix();
+        glPushMatrix();
+        glTranslatef(0, -3.25*boxSideLen, 3.5/2*boxSideLen);
+            glColor3ub(192, 192, 192);
+            glScalef(12*boxSideLen, 0.5*boxSideLen, 5*boxSideLen);
+            glutSolidCube(1);
+        glPopMatrix();
+    glPopMatrix();
+}
 
 void drawMonitor(void){
 //    printf("eye_x: %f, eye_y %f eye_z %f\n", eye_x, eye_y, eye_z);
     glPushMatrix();
-        drawRoom();
-    glPopMatrix();
-    glPushMatrix();
-        drawScreen();
+        glScalef(1.5, 1.5, 1.5);
+        glTranslatef(-40, 29, 10);
+//        glPushMatrix();
+//            drawRoom();
+//        glPopMatrix();
+        glPushMatrix();
+            drawScreen();
+        glPopMatrix();
+        glPushMatrix();
+            drawBoundary();
+        glPopMatrix();
+        glPushMatrix();
+            drawSupport();
+        glPopMatrix();
     glPopMatrix();
 }
 

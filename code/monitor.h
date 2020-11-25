@@ -14,6 +14,7 @@ void drawMonitor(void);
 void drawBox(int letter);
 void drawRoom(void);
 void drawScreen(void);
+void drawSupport(void);
 
 
 
