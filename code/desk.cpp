@@ -27,7 +27,7 @@ void drawDrawer(float x, float y, float z, float width){
     glPushMatrix();
         // draw front board
         glPushMatrix();
-            glColor3ub(128, 128,0);
+            glColor3ub(255,245,225);
             glTranslatef(x/2, -y/2, -width/2);
             drawBoard(x, y, width);
         // draw back board
@@ -67,7 +67,7 @@ void drawBottom(void){
         glPushMatrix();
             // draw vertical board left
             glTranslatef(0.75, -75/2.0, (56-1.5)/2.0);
-            glColor3ub(255, 128, 128);
+            glColor3ub(85, 107, 47);
             glPushMatrix();
                 drawBoard(1.5, 75, 56-1.5);
             glPopMatrix();
@@ -120,8 +120,8 @@ void drawBottom(void){
             glPushMatrix();
 //                glTranslatef(0, -14.5, 0);
 //                drawDrawer(35, 47, 56, 1.5);
-                glTranslatef(35.0/2, -14.5-47.0/2, -1.5/2);
-                glColor3ub(128, 0, 0);
+                glTranslatef(35.0/2, -14.5-47.0/2-0.35, -1.5/2);
+                glColor3ub(255,245,225);
                 drawBoard(35, 47, 1.5);
 //                glTranslatef(35.0/2, -47.0/8*5, 0);
 //                glRotatef(90, 0, 0, 1);
@@ -146,7 +146,7 @@ void drawTop(void){
     glPushMatrix();
         // vertical boards
         glPushMatrix();
-            glColor3ub(255, 128, 128);
+            glColor3ub(85, 107, 47);
             glTranslatef(1.5/2, 103.5/2, 12);
             // vertical board left
             glPushMatrix();
@@ -165,7 +165,7 @@ void drawTop(void){
         glPopMatrix();
         glPushMatrix();
         // horizontal boards
-            glColor3ub(128, 255, 128);
+            glColor3ub(255,245,225);
             glTranslatef(17.5, 29.75, 24/2);
             // horizontal board bottom
             glPushMatrix();
