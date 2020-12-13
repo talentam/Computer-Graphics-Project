@@ -16,7 +16,7 @@
 //GLfloat lookAt_z = 0;
 GLfloat eye_x = -50;
 GLfloat eye_y = 0;
-GLfloat eye_z = 200;
+GLfloat eye_z = 300;
 GLfloat lookAt_x = -50;
 GLfloat lookAt_y = 0;
 GLfloat lookAt_z = 0;
@@ -147,6 +147,6 @@ int main(int argc,char* argv[]){
     glutSpecialFunc(&SpecialKey);
     glutDisplayFunc(&display);
 //    glutReshapeFunc(reshape);
-    glutTimerFunc(1000, clockAni, 0);
+    glutTimerFunc(1000/60, clockAni, 0);
     glutMainLoop();
 }

@@ -314,7 +314,7 @@ void KeyBoards(unsigned char key,int x,int y)
             glLoadIdentity();
             eye_x = -50;
             eye_y = 0;
-            eye_z = 200;
+            eye_z = 300;
             lookAt_x = -50;
             lookAt_y = 0;
             lookAt_z = 0;
