@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/project.dir/Texture.cpp.obj"
+  "CMakeFiles/project.dir/animation.cpp.obj"
   "CMakeFiles/project.dir/camera.cpp.obj"
   "CMakeFiles/project.dir/desk.cpp.obj"
   "CMakeFiles/project.dir/keyboard.cpp.obj"

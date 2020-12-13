@@ -142,6 +142,60 @@ project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/build
 .PHONY : project/fast
 
+Texture.obj: Texture.cpp.obj
+
+.PHONY : Texture.obj
+
+# target to build an object file
+Texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Texture.cpp.obj
+.PHONY : Texture.cpp.obj
+
+Texture.i: Texture.cpp.i
+
+.PHONY : Texture.i
+
+# target to preprocess a source file
+Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Texture.cpp.i
+.PHONY : Texture.cpp.i
+
+Texture.s: Texture.cpp.s
+
+.PHONY : Texture.s
+
+# target to generate assembly for a file
+Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/Texture.cpp.s
+.PHONY : Texture.cpp.s
+
+animation.obj: animation.cpp.obj
+
+.PHONY : animation.obj
+
+# target to build an object file
+animation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/animation.cpp.obj
+.PHONY : animation.cpp.obj
+
+animation.i: animation.cpp.i
+
+.PHONY : animation.i
+
+# target to preprocess a source file
+animation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/animation.cpp.i
+.PHONY : animation.cpp.i
+
+animation.s: animation.cpp.s
+
+.PHONY : animation.s
+
+# target to generate assembly for a file
+animation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/animation.cpp.s
+.PHONY : animation.cpp.s
+
 camera.obj: camera.cpp.obj
 
 .PHONY : camera.obj
@@ -313,6 +367,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... project
+	@echo ... Texture.obj
+	@echo ... Texture.i
+	@echo ... Texture.s
+	@echo ... animation.obj
+	@echo ... animation.i
+	@echo ... animation.s
 	@echo ... camera.obj
 	@echo ... camera.i
 	@echo ... camera.s

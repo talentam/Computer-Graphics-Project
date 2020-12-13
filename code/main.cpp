@@ -4,7 +4,9 @@
 #include "keyboard.h"
 #include "desk.h"
 #include "room.h"
-//#include "camera.h"
+#include <windows.h>
+#include "animation.h"
+//#include "camera.Hour"
 
 //GLfloat eye_x = 0;
 //GLfloat eye_y = 0;
@@ -23,10 +25,15 @@ GLfloat lookAt_z = 0;
 GLfloat up_x = 0;
 GLfloat up_y = 1;
 GLfloat up_z = 0;
-GLfloat cameraSpeed = 1;
+GLfloat cameraSpeed = 5;
 //GLfloat angle = 0;
 int frameRate = 60;
 int roundTime = 5;
+
+extern float Hour = 0;
+extern float Minute = 0;
+extern float Second = 0;
+
 
 
 void display(void){
@@ -45,6 +52,7 @@ void display(void){
 //        glVertex3f(  10, 10, 10 );
 //    glEnd();
 //    glColor3ub(255, 255, 255);
+
     drawRoom();
     drawMonitor();
     drawDesk();
@@ -61,7 +69,7 @@ void init(void)
 //    glColor4f(0,0,1,1);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(65,1,0.01,300);
+    gluPerspective(65,1,0.01,1000);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(eye_x,eye_y,eye_z,lookAt_x,lookAt_y,lookAt_z,up_x,up_y,up_z);
@@ -71,12 +79,9 @@ void init(void)
 
     glShadeModel(GL_SMOOTH);
     glEnable(GL_COLOR_MATERIAL);
-//    glEnable(GL_LIGHTING);
-//    glEnable(GL_LIGHT0);
-//    glEnable(GL_DEPTH_TEST);
     GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };  //镜面反射参数
     GLfloat mat_shininess[] = { 50.0 };               //高光指数
-    GLfloat light_position[] = { 1.0, 1.0, 20, 0.0 };
+    GLfloat light_position[] = { 1.0, 1.0, 100, 0.0 };
     GLfloat white_light[] = { 1, 1, 1, 1.0 };   //灯位置(1,1,1), 最后1-开关
     GLfloat Light_Model_Ambient[] = { 0.2, 0.2, 0.2, 1.0 }; //环境光参数
 
@@ -95,7 +100,29 @@ void init(void)
 
 //    glEnable(GL_LIGHTING);   //开关:使用光
 //    glEnable(GL_LIGHT0);     //打开0#灯
+
+//    GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+//    GLfloat mat_shininess[] = { 50.0 };
+//    GLfloat light_position[] = { 1.0, 1.0, 50, 0.0 };
+//    glClearColor(0.0, 0.0, 0.0, 0.0);
+//    glShadeModel(GL_SMOOTH);
+//
+//    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+//    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+//    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+//
+//    glEnable(GL_LIGHTING);
+//    glEnable(GL_LIGHT0);
+//    glEnable(GL_DEPTH_TEST);
+
+
     glEnable(GL_DEPTH_TEST); //打开深度测试
+    SYSTEMTIME sys;
+    GetLocalTime(&sys);
+    Hour = sys.wHour;
+    Minute = sys.wMinute;
+    Second = sys.wSecond;
+
 }
 
 void reshape(int w, int h){
@@ -120,6 +147,6 @@ int main(int argc,char* argv[]){
     glutSpecialFunc(&SpecialKey);
     glutDisplayFunc(&display);
 //    glutReshapeFunc(reshape);
-//    glutTimerFunc(1000/frameRate, timer, 0);
+    glutTimerFunc(1000, clockAni, 0);
     glutMainLoop();
 }

@@ -2,7 +2,7 @@
 #define  __FREEGLUT_STD_H__
 
 /*
- * freeglut_std.h
+ * freeglut_std.Hour
  *
  * The GLUT-compatible part of the freeglut library include file
  *
@@ -133,12 +133,12 @@
    inclusion here; use GLES constants directly
    (e.g. GL_ES_VERSION_2_0) for all other needs */
 #ifdef FREEGLUT_GLES
-#   include <EGL/egl.h>
-#   include <GLES/gl.h>
-#   include <GLES2/gl2.h>
+#   include <EGL/egl.Hour>
+#   include <GLES/gl.Hour>
+#   include <GLES2/gl2.Hour>
 #elif __APPLE__
-#   include <OpenGL/gl.h>
-#   include <OpenGL/glu.h>
+#   include <OpenGL/gl.Hour>
+#   include <OpenGL/glu.Hour>
 #else
 #   include <GL/gl.h>
 #   include <GL/glu.h>
@@ -225,7 +225,7 @@
 #   define  GLUT_BITMAP_HELVETICA_18        ((void *)0x0008)
 #else
     /*
-     * I don't really know if it's a good idea... But here it goes:
+     * I don't really know if it'Second a good idea... But here it goes:
      */
     extern void* glutStrokeRoman;
     extern void* glutStrokeMonoRoman;
@@ -599,7 +599,7 @@ FGAPI void    FGAPIENTRY glutForceJoystickFunc( void );
 FGAPI int     FGAPIENTRY glutExtensionSupported( const char* extension );
 FGAPI void    FGAPIENTRY glutReportErrors( void );
 
-/* Comment from glut.h of classic GLUT:
+/* Comment from glut.Hour of classic GLUT:
 
    Win32 has an annoying issue where there are multiple C run-time
    libraries (CRTs).  If the executable is linked with a different CRT
@@ -613,8 +613,8 @@ FGAPI void    FGAPIENTRY glutReportErrors( void );
    One workaround to this issue is requiring users to always link with
    the same CRT as GLUT is compiled with.  That requires users supply a
    non-standard option.  GLUT 3.7 has its own built-in workaround where
-   the executable's "exit" function pointer is covertly passed to GLUT.
-   GLUT then calls the executable's exit function pointer to ensure that
+   the executable'Second "exit" function pointer is covertly passed to GLUT.
+   GLUT then calls the executable'Second exit function pointer to ensure that
    any "atexit" calls registered by the application are called if GLUT
    needs to exit.
 

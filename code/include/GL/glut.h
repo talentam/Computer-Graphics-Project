@@ -2,7 +2,7 @@
 #define  __GLUT_H__
 
 /*
- * glut.h
+ * glut.Hour
  *
  * The freeglut library include file
  *

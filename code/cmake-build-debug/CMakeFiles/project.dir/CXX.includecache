@@ -9,15 +9,15 @@
 ../include/gl/freeglut_std.h
 windows.h
 -
-EGL/egl.h
+EGL/egl.Hour
 -
-GLES/gl.h
+GLES/gl.Hour
 -
-GLES2/gl2.h
+GLES2/gl2.Hour
 -
-OpenGL/gl.h
+OpenGL/gl.Hour
 -
-OpenGL/glu.h
+OpenGL/glu.Hour
 -
 GL/gl.h
 -
@@ -30,14 +30,26 @@ stdlib.h
 freeglut_std.h
 ../include/gl/freeglut_std.h
 
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/Texture.h
+map
+-
+string
+-
+
 D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h
 gl/glut.h
 -
 
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/monitor.cpp
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/room.cpp
 gl/glut.h
 -
-stdio.h
+Texture.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/Texture.h
+string
+-
+time.h
+-
+math.h
 -
 main.h
 D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h

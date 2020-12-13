@@ -1,164 +1,89 @@
-//#include <stdio.h>
-//#include <gl/glut.h>
-//#include <Windows.h>
+//void drawClock(void){
+//    glColor3f(1, 1, 1); //
 //
-//GLfloat angle=10.0f;
-//GLfloat xDirection=0.0f;
-//GLfloat yDirection=0.0f;
-//GLfloat zDirection=10.0f;
+//    int centerX = Width / 2;
+//    int centerY = Height / 2;
+//    int r = 100;
+//    int n = 300;
+//    int i;
 //
-//GLfloat eye_x = 0;
-//GLfloat eye_y = 0;
-//GLfloat eye_z = 10;
-//GLfloat lookAt_x = 0;
-//GLfloat lookAt_y = 0;
-//GLfloat lookAt_z = 0;
-//GLfloat up_x = 0;
-//GLfloat up_y = 1;
-//GLfloat up_z = 0;
-//GLfloat step = 0.1;
-//
-//void InitEnvironment()
-//{
-//    glEnable(GL_DEPTH);
-//    glClearColor(1,1,1,0);
-//    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-//    glColor4f(0,0,1,1);
-//    glMatrixMode(GL_PROJECTION);
-//    glLoadIdentity();
-//    gluPerspective(65,1,1,50);
-//    glMatrixMode(GL_MODELVIEW);
-//    glLoadIdentity();
-//    gluLookAt(eye_x,eye_y,eye_z,lookAt_x,lookAt_y,lookAt_z,up_x,up_y,up_z);
-//}
-//
-//void KeyBoards(unsigned char key,int x,int y)
-//{
-//    switch (key)
+//    // draw clock boundary
+//    glPushMatrix();
+//    for (i = 0; i<n; i++)
 //    {
-//        case 'w':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            eye_z -= step;
-//            lookAt_z -= step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 's':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            eye_z += step;
-//            lookAt_z += step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 'a':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            eye_x -= step;
-//            lookAt_x -= step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 'd':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            eye_x += step;
-//            lookAt_x += step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 'q':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            eye_y += step;
-//            lookAt_y += step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 'e':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            eye_y -= step;
-//            lookAt_y -= step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 'j':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            lookAt_x -= step;
-//            lookAt_z += step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 'k':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            lookAt_x += step;
-//            lookAt_z += step;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case ' ':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            eye_x = 0;
-//            eye_y = 0;
-//            eye_z = 10;
-//            lookAt_x = 0;
-//            lookAt_y = 0;
-//            lookAt_z = 0;
-//            up_x = 0;
-//            up_y = 1;
-//            up_z = 0;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);            glutPostRedisplay();
-//            break;
+//        glPushMatrix();
+//        glTranslatef(centerX + (r + 10)*cos(2 * PI / n * i), centerY + (r + 10)*sin(2 * PI / n * i), 0);
+//        glutSolidSphere(5, 20, 20);
+//        glPopMatrix();
 //    }
-////    printf("%f %f %f %f %f %f\n", eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z);
-//}
+//    glPopMatrix();
 //
-//void myDisplay(void)
-//{
-//    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-//    glutWireTeapot(4);
-//    glutSwapBuffers();
-//}
 //
-//void RotateRect()
-//{
-//    angle+=0.5;
-//    if(angle>=360)
+//    // draw the clock dial
+//    int gaps = 60;
+//    float line1 = 10;
+//    float line2 = 5;
+//    for (i = 0; i < gaps; i++)
 //    {
-//        angle=0.0f;
+//        if (i % 5 == 0){     //  long dial
+//            glPushMatrix();
+//            glTranslatef(centerX + (r - line1) * sin(2 * PI / gaps * i), centerY + (r - line1) * cos(2 * PI / gaps * i), 0);
+//            glRotatef(-i*6, 0, 0, 1);
+//            glScalef(1, 4, 1);
+//            glutSolidCube(3);
+//            glPopMatrix();
+//
+//        }else {             //short dial
+//            glPushMatrix();
+//            glTranslatef(centerX + (r - line1) * sin(2 * PI / gaps * i), centerY + (r - line1) * cos(2 * PI / gaps * i), 0);
+//            glRotatef(-i*6, 0, 0, 1);
+//            glScalef(1, 2, 1);
+//            glutSolidCube(2);
+//            glPopMatrix();
+//        }
 //    }
-//    Sleep(30);
-//    myDisplay();
-//}
 //
-////void OnMouse(int button,int state,int x,int y)
-////{
-////    if(button==GLUT_LEFT_BUTTON&&state==GLUT_DOWN)
-////    {
-////        glutIdleFunc(RotateRect);
-////    }
-////
-////    if(button==GLUT_RIGHT_BUTTON&&state==GLUT_DOWN)
-////    {
-////        glutIdleFunc(NULL);
-////    }
-////}
+//    // middle circle
+//    glPushMatrix();
+//    glTranslatef(centerX, centerY, 0);
+//    glutSolidSphere(3, 20, 20);
+//    glPopMatrix();
 //
-//int main(int argc, char *argv[])
-//{
-//    glutInit(&argc, argv);   //初始化GLUT
-//    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-//    glutInitWindowPosition(500, 200);
-//    glutInitWindowSize(500, 500);
-//    glutCreateWindow("OpenGL");
-//    InitEnvironment();   //初始化显示环境
-//    glutKeyboardFunc(&KeyBoards);  //注册键盘事件
-//    glutDisplayFunc(&myDisplay);   //回调函数
-//    glutMainLoop();    //持续显示，当窗口改变会重新绘制图形
-//    return 0;
+//    int h_needle = r - 3 * line1;
+//    int m_needle = r - line1;
+//
+//    float s_angle = Second / 60.0;
+//    float m_angle = (Minute * 60 + Second) / 3600.0;
+//    float h2 = Hour >= 12 ? (Hour - 12) : Hour;
+//    float h_angle = (h2 * 60 * 60 + Minute * 60 + Second) / (12 * 60 * 60);
+//
+//    // Second
+//    glLineWidth(1);
+//    glBegin(GL_LINES);
+//    glVertex2f(centerX - 2 * line1 * sin(2 * PI * s_angle), centerY - 2 * line1 * cos(2 * PI * s_angle));
+//    glVertex2f(centerX + (r - line2) * sin(2 * PI * s_angle), centerY + (r - line2) * cos(2 * PI * s_angle));
+//    glEnd();
+////    glPushMatrix();
+////        glTranslatef(centerX - 2 * line1 * sin(2 * PI * s_angle), centerY - 2 * line1 * cos(2 * PI * s_angle), 0);
+////        glRotatef(-s_angle, 0, 0, 1);
+////        glScalef(2, 50, 2);
+////        glutSolidCube(1);
+////    glPopMatrix();
+//
+//
+//    //Minute
+//    glLineWidth(3);
+//    glBegin(GL_LINES);
+//    glVertex2f(centerX, centerY);
+//    glVertex2f(centerX + m_needle*sin(2 * PI * m_angle), centerY + m_needle * cos(2 * PI * m_angle));
+//    glEnd();
+//
+//    // Hour
+//    glLineWidth(5);
+//    glBegin(GL_LINES);
+//    glVertex2f(centerX, centerY);
+//    glVertex2f(centerX + h_needle * sin(2 * PI * h_angle), centerY + h_needle * cos(2 * PI * h_angle));
+//    glEnd();
+//
+//    glFlush();
 //}

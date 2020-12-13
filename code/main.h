@@ -18,8 +18,12 @@ extern GLfloat up_z;
 extern GLfloat cameraSpeed;
 //extern GLfloat angle;
 
+extern float Hour;
+extern float Minute;
+extern float Second;
+
 void display(void);
-//void reshape(int w, int h);
+//void reshape(int w, int Hour);
 void init(void);
 int main(int argc,char* argv[]);
 

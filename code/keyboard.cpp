@@ -312,10 +312,10 @@ void KeyBoards(unsigned char key,int x,int y)
         case '0':
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
-            eye_x = 0;
+            eye_x = -50;
             eye_y = 0;
-            eye_z = 50;
-            lookAt_x = 0;
+            eye_z = 200;
+            lookAt_x = -50;
             lookAt_y = 0;
             lookAt_z = 0;
             up_x = 0;

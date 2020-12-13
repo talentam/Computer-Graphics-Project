@@ -4,6 +4,9 @@
 
 #ifndef PROJECT_ROOM_H
 #define PROJECT_ROOM_H
+//extern float Hour;
+//extern float Minute;
+//extern float Second;
 
 void drawRoom(void);
 
