@@ -4,13 +4,41 @@
 #include <gl/glut.h>
 #include "room.h"
 #include "main.h"
-void clockAni(int value)
-{
+#include "desk.h"
+
+extern int trigger = 0;
+
+void clockAnimation(void){
+    // keep updating the system time
     SYSTEMTIME sys;
     GetLocalTime(&sys);
     Hour = sys.wHour;
     Minute = sys.wMinute;
     Second = sys.wSecond;
+}
+
+void drawerAnimation(void){
+    if(trigger == 1 & drawerZ < 50){
+        drawerZ += 50/float(60);
+    }
+    else if(trigger == -1 & drawerZ > 0){
+        drawerZ -= 50/float(60);
+    }
+}
+
+void clockAni(int value)
+{
+    // clock animation
+    clockAnimation();
+    // drawer animation
+    drawerAnimation();
+    glutPostRedisplay(); // 重画
+    glutTimerFunc(1000/60, clockAni, 1); // 每一秒中执行一次
+}
+
+
+
+
 
 //    Second += 1/float(50);
 //    int carry1 = 0;
@@ -29,8 +57,3 @@ void clockAni(int value)
 //    Hour += carry2/float(50);
 //    if (Hour > 24)
 //        Hour = 0;
-
-    glutPostRedisplay(); // 重画
-
-    glutTimerFunc(1000/60, clockAni, 1); // 每一秒中执行一次
-}

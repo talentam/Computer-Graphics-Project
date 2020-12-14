@@ -4,6 +4,7 @@
 #include <gl/glut.h>
 #include "main.h"
 #include "monitor.h"
+#include "animation.h"
 #include <stdio.h>
 
 void SpecialKey(GLint key,GLint x,GLint y)
@@ -278,6 +279,12 @@ void KeyBoards(unsigned char key,int x,int y)
             lookAt_y -= cameraSpeed;
             gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
             glutPostRedisplay();
+            break;
+        case '7':
+            trigger = 1;
+            break;
+        case '8':
+            trigger = -1;
             break;
 //        case '=':
 //            glMatrixMode(GL_MODELVIEW);

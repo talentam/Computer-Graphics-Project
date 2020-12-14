@@ -328,10 +328,6 @@ void drawWindows(void){
     glPopMatrix();
 }
 
-void drawBooks(void){
-
-}
-
 void drawBed(void){
     glPushMatrix();
         glTranslatef(-100, 23.5 - 100, -10);
@@ -429,8 +425,6 @@ void drawRoom(void) {
     drawWindows();
     // draw poster
     drawPoster();
-    // draw books
-    drawBooks();
     // draw bed
     drawBed();
 

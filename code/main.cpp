@@ -117,11 +117,11 @@ void init(void)
 
 
     glEnable(GL_DEPTH_TEST); //打开深度测试
-    SYSTEMTIME sys;
-    GetLocalTime(&sys);
-    Hour = sys.wHour;
-    Minute = sys.wMinute;
-    Second = sys.wSecond;
+//    SYSTEMTIME sys;
+//    GetLocalTime(&sys);
+//    Hour = sys.wHour;
+//    Minute = sys.wMinute;
+//    Second = sys.wSecond;
 
 }
 

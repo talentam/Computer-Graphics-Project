@@ -5,6 +5,7 @@
 #ifndef PROJECT_ANIMATION_H
 #define PROJECT_ANIMATION_H
 
+extern int trigger;
 void clockAni(int value);
 
 

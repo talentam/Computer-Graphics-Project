@@ -5,6 +5,8 @@
 #include <gl/glut.h>
 #include "Texture.h"
 
+extern float drawerZ = 0;
+
 void drawBoard(float x, float y, float z){
 //    原始代码
 //    glPushMatrix();
@@ -225,7 +227,7 @@ void drawBottom(void){
             glTranslatef(0, 0, 56);
             //left top drawer
             glPushMatrix();
-//                glTranslatef(0, 0, 50);
+                glTranslatef(0, 0, drawerZ);
                 drawDrawer(35, 14, 56, 1.5);
                 glTranslatef(35.0/2, -14.0/2, 0);
                 drawHandle();
@@ -247,7 +249,7 @@ void drawBottom(void){
             glPopMatrix();
 
             // right drawer
-//            glTranslatef(0, 0, 50);
+            glTranslatef(0, 0, drawerZ);
             glTranslatef(35.5, 0, 0);
             drawDrawer(54.5, 14, 56, 1.5);
             glTranslatef(54.5/2, -14.0/2, 0);
@@ -310,15 +312,152 @@ void drawTop(void){
         glPopMatrix();
     glPopMatrix();
 }
+
+void drawCube(string bitmap[], float x, float y, float z){
+    // bitmap[]: 0: front | 1: back | 2: top | 3: bottom | 4: left | 5: right
+    glPushMatrix();
+    glScalef(x, y, z);
+    glEnable(GL_TEXTURE_2D);
+    int textId;
+
+
+    // FRONT
+    textId = GetTexture(bitmap[0]);
+    glBindTexture(GL_TEXTURE_2D, textId);
+
+    glBegin(GL_POLYGON);
+    glNormal3d(0.0f, 0.0f, 1.0f);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f( 0.5f, -0.5f, 0.5f );
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f( 0.5f, 0.5f, 0.5f );
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f( -0.5f, 0.5f, 0.5f );
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f( -0.5f, -0.5f, 0.5f);
+    glEnd();
+    // BACK
+    textId = GetTexture(bitmap[1]);
+    glBindTexture(GL_TEXTURE_2D, textId);
+
+    glBegin(GL_POLYGON);
+    glNormal3d(0.0f, 0.0f, -1.0f);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f(  0.5f, -0.5f, -0.5f );
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f(  0.5f, 0.5f, -0.5f );
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f( -0.5f, 0.5f, -0.5f );
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f( -0.5f, -0.5f, -0.5f );
+    glEnd();
+    // TOP
+    textId = GetTexture(bitmap[2]);
+    glBindTexture(GL_TEXTURE_2D, textId);
+
+    glBegin(GL_POLYGON);
+    glNormal3d(0.0f, 1.0f, 0.0f);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f( 0.5f, 0.5f, 0.5f );
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f( 0.5f, 0.5f, -0.5f );
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f( -0.5f, 0.5f, -0.5f );
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f( -0.5f, 0.5f, 0.5f );
+    glEnd();
+    // BOTTOM
+    textId = GetTexture(bitmap[3]);
+    glBindTexture(GL_TEXTURE_2D, textId);
+
+    glBegin(GL_POLYGON);
+    glNormal3d(0.0f, -1.0f, 0.0f);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f( -0.5f, -0.5f, 0.5f );
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f( -0.5f, -0.5f, -0.5f );
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f( 0.5f, -0.5f, -0.5f );
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f( 0.5f, -0.5f, 0.5f );
+    glEnd();
+    // LEFT
+    textId = GetTexture(bitmap[4]);
+    glBindTexture(GL_TEXTURE_2D, textId);
+
+    glBegin(GL_POLYGON);
+    glNormal3d(-1.0f, 0.0f, 0.0f);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f( -0.5f, -0.5f, 0.5f );
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f( -0.5f, 0.5f, 0.5f );
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f( -0.5f, 0.5f, -0.5f );
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f( -0.5f, -0.5f, -0.5f );
+    glEnd();
+    // RIGHT
+    textId = GetTexture(bitmap[5]);
+    glBindTexture(GL_TEXTURE_2D, textId);
+
+    glBegin(GL_POLYGON);
+    glNormal3d(1.0f, 0.0f, 0.0f);
+    glTexCoord2f(0.0f, 1.0f);
+    glVertex3f( 0.5f, -0.5f, -0.5f );
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex3f( 0.5f, 0.5f, -0.5f );
+    glTexCoord2f(1.0f, 0.0f);
+    glVertex3f( 0.5f, 0.5f, 0.5f );
+    glTexCoord2f(1.0f, 1.0f);
+    glVertex3f( 0.5f, -0.5f, 0.5f );
+    glEnd();
+
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glDisable(GL_TEXTURE_2D);
+//    glDisable(GL_COLOR_MATERIAL);
+
+    glPopMatrix();
+}
+
+void drawBooks(){
+    glPushMatrix();
+        string bookCover[6] = {"../../image/window.bmp", "../../image/window.bmp", "../../image/window.bmp",
+                               "../../image/window.bmp", "../../image/window.bmp", "../../image/window.bmp"};
+        glTranslatef(85, 79, 9);
+        drawCube(bookCover, 4, 24, 18);
+        glTranslatef(-6, 3, 0);
+        drawCube(bookCover, 4, 30, 18);
+        glTranslatef(-6, -2, 0);
+        drawCube(bookCover, 4, 26, 18);
+        glPushMatrix();
+            glTranslatef(-30, -0.9, 0);
+            glRotatef(30, 0, 0, 1);
+            drawCube(bookCover, 4, 26, 18);
+        glPopMatrix();
+
+    glPopMatrix();
+}
+
+void drawSockets(void){
+    glPushMatrix();
+        string bookCover[6] = {"../../image/socket.bmp", "../../image/white.bmp", "../../image/white.bmp",
+                               "../../image/white.bmp", "../../image/white.bmp", "../../image/white.bmp"};
+        glTranslatef(18, 6, 0.5);
+        drawCube(bookCover, 6, 6, 1);
+    glPopMatrix();
+}
+
 void drawDesk(void){
     glPushMatrix();
         glTranslatef(-100, 0, 0);
-        glPushMatrix();
-            drawTop();
-        glPopMatrix();
-        glPushMatrix();
-            drawBottom();
-        glPopMatrix();
+        //draw upper part of the desk
+        drawTop();
+        //draw bottom part of the desk
+        drawBottom();
+        //draw books
+        drawBooks();
+        //draw socket
+        drawSockets();
     glPopMatrix();
 }
 
