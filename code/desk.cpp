@@ -6,6 +6,7 @@
 #include "Texture.h"
 
 extern float drawerZ = 0;
+extern float drawerAngle = 0;
 
 void drawBoard(float x, float y, float z){
 //    原始代码
@@ -237,6 +238,8 @@ void drawBottom(void){
             glPushMatrix();
 //                glTranslatef(0, -14.5, 0);
 //                drawDrawer(35, 47, 56, 1.5);
+
+                glRotatef(-drawerAngle, 0, 1, 0);
                 glTranslatef(35.0/2, -14.5-47.0/2-0.35, -1.5/2);
                 glColor3ub(255,245,225);
                 drawBoard(35, 47, 1.5);

@@ -6,6 +6,7 @@
 #define PROJECT_DESK_H
 
 extern float drawerZ;
+extern float drawerAngle;
 
 void drawHandle(void);
 void drawDrawer(float x, float y, float z, float width);

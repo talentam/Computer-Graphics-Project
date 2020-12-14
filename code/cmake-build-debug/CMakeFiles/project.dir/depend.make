@@ -7,6 +7,7 @@ CMakeFiles/project.dir/Texture.cpp.obj: ../Texture.h
 CMakeFiles/project.dir/animation.cpp.obj: ../include/gl/freeglut_std.h
 CMakeFiles/project.dir/animation.cpp.obj: ../include/gl/glut.h
 CMakeFiles/project.dir/animation.cpp.obj: ../animation.cpp
+CMakeFiles/project.dir/animation.cpp.obj: ../desk.h
 CMakeFiles/project.dir/animation.cpp.obj: ../main.h
 CMakeFiles/project.dir/animation.cpp.obj: ../room.h
 
@@ -21,6 +22,7 @@ CMakeFiles/project.dir/desk.cpp.obj: ../desk.cpp
 
 CMakeFiles/project.dir/keyboard.cpp.obj: ../include/gl/freeglut_std.h
 CMakeFiles/project.dir/keyboard.cpp.obj: ../include/gl/glut.h
+CMakeFiles/project.dir/keyboard.cpp.obj: ../animation.h
 CMakeFiles/project.dir/keyboard.cpp.obj: ../keyboard.cpp
 CMakeFiles/project.dir/keyboard.cpp.obj: ../main.h
 CMakeFiles/project.dir/keyboard.cpp.obj: ../monitor.h

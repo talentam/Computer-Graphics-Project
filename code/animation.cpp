@@ -18,11 +18,13 @@ void clockAnimation(void){
 }
 
 void drawerAnimation(void){
-    if(trigger == 1 & drawerZ < 50){
-        drawerZ += 50/float(60);
+    if(trigger == 1 & drawerZ < 40){
+        drawerZ += 40/float(60);
+        drawerAngle += 90/float(60);
     }
     else if(trigger == -1 & drawerZ > 0){
-        drawerZ -= 50/float(60);
+        drawerZ -= 40/float(60);
+        drawerAngle -= 90/float(60);
     }
 }
 
