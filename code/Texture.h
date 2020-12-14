@@ -1,6 +1,3 @@
-//
-// Created by GIGABYTE on 2020/11/26.
-//
 #ifndef PROJECT_TEXTURE_H
 #define PROJECT_TEXTURE_H
 

@@ -1,141 +1,130 @@
-//
-// Created by GIGABYTE on 2020/11/25.
-//
 #include <gl/glut.h>
 #include "Texture.h"
 #include <string>
 #include <math.h>
 #include "main.h"
 
-const GLfloat PI = 3.141592653f;
-const int Width = 600;
-const int Height = 600;
-
+//basic function to draw cube with texture
 void drawCube(string bitmap, float x, float y, float z){
     glPushMatrix();
-    glScalef(x, y, z);
+        glScalef(x, y, z);
+        int textId = GetTexture(bitmap);
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, textId);
 
-//    int textId = GetTexture("C:/Users/GIGABYTE.000/Desktop/wood.bmp");
-    int textId = GetTexture(bitmap);
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, textId);
+        // FRONT
+        glBegin(GL_POLYGON);
+        glNormal3d(0.0f, 0.0f, 1.0f);
+        glTexCoord2f(0.0f, 1.0f);
+        glVertex3f( 0.5f, -0.5f, 0.5f );
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3f( 0.5f, 0.5f, 0.5f );
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3f( -0.5f, 0.5f, 0.5f );
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3f( -0.5f, -0.5f, 0.5f);
+        glEnd();
+        // BACK
+        glBegin(GL_POLYGON);
+        glNormal3d(0.0f, 0.0f, -1.0f);
+        glTexCoord2f(0.0f, 1.0f);
+        glVertex3f(  0.5f, -0.5f, -0.5f );
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3f(  0.5f, 0.5f, -0.5f );
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3f( -0.5f, 0.5f, -0.5f );
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3f( -0.5f, -0.5f, -0.5f );
+        glEnd();
+        // TOP
+        glBegin(GL_POLYGON);
+        glNormal3d(0.0f, 1.0f, 0.0f);
+        glTexCoord2f(0.0f, 1.0f);
+        glVertex3f( 0.5f, 0.5f, 0.5f );
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3f( 0.5f, 0.5f, -0.5f );
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3f( -0.5f, 0.5f, -0.5f );
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3f( -0.5f, 0.5f, 0.5f );
+        glEnd();
+        // BOTTOM
+        glBegin(GL_POLYGON);
+        glNormal3d(0.0f, -1.0f, 0.0f);
+        glTexCoord2f(0.0f, 1.0f);
+        glVertex3f( -0.5f, -0.5f, 0.5f );
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3f( -0.5f, -0.5f, -0.5f );
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3f( 0.5f, -0.5f, -0.5f );
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3f( 0.5f, -0.5f, 0.5f );
+        glEnd();
+        // LEFT
+        glBegin(GL_POLYGON);
+        glNormal3d(-1.0f, 0.0f, 0.0f);
+        glTexCoord2f(0.0f, 1.0f);
+        glVertex3f( -0.5f, -0.5f, 0.5f );
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3f( -0.5f, 0.5f, 0.5f );
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3f( -0.5f, 0.5f, -0.5f );
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3f( -0.5f, -0.5f, -0.5f );
+        glEnd();
+        // RIGHT
+        glBegin(GL_POLYGON);
+        glNormal3d(1.0f, 0.0f, 0.0f);
+        glTexCoord2f(0.0f, 1.0f);
+        glVertex3f( 0.5f, -0.5f, -0.5f );
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3f( 0.5f, 0.5f, -0.5f );
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3f( 0.5f, 0.5f, 0.5f );
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3f( 0.5f, -0.5f, 0.5f );
+        glEnd();
 
-
-    // FRONT
-    glBegin(GL_POLYGON);
-    glNormal3d(0.0f, 0.0f, 1.0f);
-    glTexCoord2f(0.0f, 1.0f);
-    glVertex3f( 0.5f, -0.5f, 0.5f );
-    glTexCoord2f(0.0f, 0.0f);
-    glVertex3f( 0.5f, 0.5f, 0.5f );
-    glTexCoord2f(1.0f, 0.0f);
-    glVertex3f( -0.5f, 0.5f, 0.5f );
-    glTexCoord2f(1.0f, 1.0f);
-    glVertex3f( -0.5f, -0.5f, 0.5f);
-    glEnd();
-    // BACK
-    glBegin(GL_POLYGON);
-    glNormal3d(0.0f, 0.0f, -1.0f);
-    glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(  0.5f, -0.5f, -0.5f );
-    glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(  0.5f, 0.5f, -0.5f );
-    glTexCoord2f(1.0f, 0.0f);
-    glVertex3f( -0.5f, 0.5f, -0.5f );
-    glTexCoord2f(1.0f, 1.0f);
-    glVertex3f( -0.5f, -0.5f, -0.5f );
-    glEnd();
-    // TOP
-    glBegin(GL_POLYGON);
-    glNormal3d(0.0f, 1.0f, 0.0f);
-    glTexCoord2f(0.0f, 1.0f);
-    glVertex3f( 0.5f, 0.5f, 0.5f );
-    glTexCoord2f(0.0f, 0.0f);
-    glVertex3f( 0.5f, 0.5f, -0.5f );
-    glTexCoord2f(1.0f, 0.0f);
-    glVertex3f( -0.5f, 0.5f, -0.5f );
-    glTexCoord2f(1.0f, 1.0f);
-    glVertex3f( -0.5f, 0.5f, 0.5f );
-    glEnd();
-    // BOTTOM
-    glBegin(GL_POLYGON);
-    glNormal3d(0.0f, -1.0f, 0.0f);
-    glTexCoord2f(0.0f, 1.0f);
-    glVertex3f( -0.5f, -0.5f, 0.5f );
-    glTexCoord2f(0.0f, 0.0f);
-    glVertex3f( -0.5f, -0.5f, -0.5f );
-    glTexCoord2f(1.0f, 0.0f);
-    glVertex3f( 0.5f, -0.5f, -0.5f );
-    glTexCoord2f(1.0f, 1.0f);
-    glVertex3f( 0.5f, -0.5f, 0.5f );
-    glEnd();
-    // LEFT
-    glBegin(GL_POLYGON);
-    glNormal3d(-1.0f, 0.0f, 0.0f);
-    glTexCoord2f(0.0f, 1.0f);
-    glVertex3f( -0.5f, -0.5f, 0.5f );
-    glTexCoord2f(0.0f, 0.0f);
-    glVertex3f( -0.5f, 0.5f, 0.5f );
-    glTexCoord2f(1.0f, 0.0f);
-    glVertex3f( -0.5f, 0.5f, -0.5f );
-    glTexCoord2f(1.0f, 1.0f);
-    glVertex3f( -0.5f, -0.5f, -0.5f );
-    glEnd();
-    // RIGHT
-    glBegin(GL_POLYGON);
-    glNormal3d(1.0f, 0.0f, 0.0f);
-    glTexCoord2f(0.0f, 1.0f);
-    glVertex3f( 0.5f, -0.5f, -0.5f );
-    glTexCoord2f(0.0f, 0.0f);
-    glVertex3f( 0.5f, 0.5f, -0.5f );
-    glTexCoord2f(1.0f, 0.0f);
-    glVertex3f( 0.5f, 0.5f, 0.5f );
-    glTexCoord2f(1.0f, 1.0f);
-    glVertex3f( 0.5f, -0.5f, 0.5f );
-    glEnd();
-
-    glBindTexture(GL_TEXTURE_2D, 0);
-    glDisable(GL_TEXTURE_2D);
-//    glDisable(GL_COLOR_MATERIAL);
-
+        glBindTexture(GL_TEXTURE_2D, 0);
+        glDisable(GL_TEXTURE_2D);
     glPopMatrix();
 }
 
+// basic function to draw 2D surface with texture
 void drawSquare(string texture, float width, float length) {
     glPushMatrix();
+        glEnable(GL_COLOR_MATERIAL);
+        int textId = GetTexture(texture);
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, textId);
 
-    glEnable(GL_COLOR_MATERIAL);
-    int textId = GetTexture(texture);
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, textId);
+        // back
+        glBegin(GL_POLYGON);
+        glNormal3d(0.0f, 1.0f, 0.0f);
+        glTexCoord2f(0.0f, 1.0f);
+        glVertex3f(0, 0, 0);
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3f(0, 0, length);
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3f(width, 0, length);
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3f(width, 0, 0);
+        glEnd();
 
-    // back
-    glBegin(GL_POLYGON);
-    glNormal3d(0.0f, 1.0f, 0.0f);
-//    glColor3ub(R, G, B);
-    glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(0, 0, 0);
-    glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(0, 0, length);
-    glTexCoord2f(1.0f, 0.0f);
-    glVertex3f(width, 0, length);
-    glTexCoord2f(1.0f, 1.0f);
-    glVertex3f(width, 0, 0);
-    glEnd();
-
-    glBindTexture(GL_TEXTURE_2D, 0);
-    glDisable(GL_TEXTURE_2D);
-//    glDisable(GL_COLOR_MATERIAL);
-
+        glBindTexture(GL_TEXTURE_2D, 0);
+        glDisable(GL_TEXTURE_2D);
     glPopMatrix();
 }
 
 void drawClock(void){
+    GLfloat PI = 3.141592653f;
+    int Width = 600;
+    int Height = 600;
+
     glPushMatrix();
         glTranslatef(-90, 80, 0);
         glScalef(0.2, 0.2, 0.2);
-
-        glColor3f(1, 1, 1); //
+        glColor3f(1, 1, 1);
 
         int centerX = Width / 2;
         int centerY = Height / 2;
@@ -228,7 +217,7 @@ void drawClock(void){
             glutSolidCube(1);
         glPopMatrix();
 
-        glFlush();
+//        glFlush();
     glPopMatrix();
 }
 void drawWalls(void){
@@ -238,7 +227,6 @@ void drawWalls(void){
         glTranslatef(-50, 0, 0);
         string bitmap = "../../image/floor2.bmp";
         // bottom floor
-
         glPushMatrix();
             drawSquare(bitmap, 300, 300);
         glPopMatrix();
@@ -290,7 +278,10 @@ void drawPoster(void){
         glRotatef(90, 1, 0, 0);
         glRotatef(-90, 0, 0, 1);
         glTranslatef(-100, -149, -50);
-//        glScalef(0.3, 0.15, 0.15);
+        drawSquare(bitmap, 60, 30);
+        bitmap = "../../image/2077.bmp";
+        glRotatef(180, 0, 0, 1);
+        glTranslatef(-50, -298, 0);
         drawSquare(bitmap, 60, 30);
     glPopMatrix();
 }
@@ -370,10 +361,8 @@ void drawBed(void){
         glPopMatrix();
         //draw bed and bed sheet
         glPushMatrix();
-//            bitmap = "../../image/white.bmp";
             glTranslatef(45, 35, 90);
             glPushMatrix();
-//                glTranslatef(45, 35, 90);
                 glScalef(85, 25, 175);
                 glutSolidCube(1);
             glPopMatrix();
@@ -384,26 +373,22 @@ void drawBed(void){
                 glColor3ub(218,218,216);
                 glScalef(85, 2, 105);
                 glutSolidCube(1);
-//                drawCube(bitmap, 85, 2, 105);
             glPopMatrix();
             glPushMatrix();
                 glTranslatef(-43, 4.5, 35);
                 glScalef(1, 20, 105);
                 glutSolidCube(1);
-//                drawCube(bitmap, 1, 20, 105);
             glPopMatrix();
             glPushMatrix();
                 glTranslatef(43, 4.5, 35);
                 glScalef(1, 20, 105);
                 glutSolidCube(1);
-//                drawCube(bitmap, 1, 20, 105);
             glPopMatrix();
 
             glTranslatef(0, 4.5, 88);
             glColor3ub(218,218,216);
             glScalef(87, 20, 1);
             glutSolidCube(1);
-//            drawCube(bitmap, 87, 20, 1);
         glPopMatrix();
         // draw pillar
         glPushMatrix();
@@ -411,9 +396,25 @@ void drawBed(void){
             glScalef(60, 10, 20);
             glutSolidCube(1);
         glPopMatrix();
-
     glPopMatrix();
 
+}
+
+void drawLamp(void){
+    string bitmap;
+    glPushMatrix();
+        glScalef(0.8, 0.8, 0.8);
+        bitmap = "../../image/bedsheet.bmp";
+        glTranslatef(-110, 1, 40);
+        drawCube(bitmap, 20, 2, 10);
+        glPushMatrix();
+            glTranslatef(0, 19.5, 0);
+            glRotatef(-20, 0, 0, 1);
+            drawCube(bitmap, 3, 40, 3);
+        glPopMatrix();
+        glTranslatef(18, 38, 0);
+        drawCube(bitmap, 34, 3, 3);
+    glPopMatrix();
 }
 
 void drawRoom(void) {
@@ -427,55 +428,8 @@ void drawRoom(void) {
     drawPoster();
     // draw bed
     drawBed();
-
-
-//    glBegin(GL_POLYGON);
-//    glNormal3d(0.0f, 0.0f, 1.0f);
-//    glTexCoord2f(0.0f, 1.0f);
-//    glVertex3f(0, 0, 0);
-//    glTexCoord2f(0.0f, 0.0f);
-//    glVertex3f(0, 0, 200);
-//    glTexCoord2f(1.0f, 0.0f);
-//    glVertex3f(200, 0, 200);
-//    glTexCoord2f(1.0f, 1.0f);
-//    glVertex3f(200, 0, 0);
-//    glEnd();
-    // bottom
-
-    // Enable texturing
-
-//    glEnable(GL_COLOR_MATERIAL);
-////    // Generate a texture buffer
-////    int textId = GetTexture("C:/Users/GIGABYTE.000/Desktop/floor.bmp");
-//    int textId = GetTexture("../../image/floor.bmp");
-//    glEnable(GL_TEXTURE_2D);
-////
-////    // Bin to buffer
-//    glBindTexture(GL_TEXTURE_2D, textId);
-//    // Set texture parameters
-////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//
-//    glBegin(GL_POLYGON);
-//    glNormal3d(0.0f, 0.0f, 1.0f);
-//    glColor3ub(250, 250, 250);
-//    glTexCoord2f(0.0f, 1.0f);
-//    glVertex3f(0, 0, 0);
-//    glTexCoord2f(0.0f, 0.0f);
-//    glVertex3f(0, 0, 200);
-//    glTexCoord2f(1.0f, 0.0f);
-//    glVertex3f(200, 0, 200);
-//    glTexCoord2f(1.0f, 1.0f);
-//    glVertex3f(200, 0, 0);
-//    glEnd();
-//
-//    glBindTexture(GL_TEXTURE_2D, 0);
-//    glDisable(GL_TEXTURE_2D);
-//    glDisable(GL_COLOR_MATERIAL);
-
-
+    // draw table lamp
+    drawLamp();
 }
 
 

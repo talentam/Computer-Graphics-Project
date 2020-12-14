@@ -30,21 +30,15 @@ stdlib.h
 freeglut_std.h
 ../include/gl/freeglut_std.h
 
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/animation.cpp
-gl/glut.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/Texture.h
+map
 -
-room.h
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/room.h
-main.h
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h
-desk.h
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.h
-
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.h
-
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h
-gl/glut.h
+string
 -
 
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/room.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.cpp
+gl/glut.h
+-
+Texture.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/Texture.h
 

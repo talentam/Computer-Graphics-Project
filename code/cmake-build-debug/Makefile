@@ -196,33 +196,6 @@ animation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/animation.cpp.s
 .PHONY : animation.cpp.s
 
-camera.obj: camera.cpp.obj
-
-.PHONY : camera.obj
-
-# target to build an object file
-camera.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/camera.cpp.obj
-.PHONY : camera.cpp.obj
-
-camera.i: camera.cpp.i
-
-.PHONY : camera.i
-
-# target to preprocess a source file
-camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/camera.cpp.i
-.PHONY : camera.cpp.i
-
-camera.s: camera.cpp.s
-
-.PHONY : camera.s
-
-# target to generate assembly for a file
-camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/camera.cpp.s
-.PHONY : camera.cpp.s
-
 desk.obj: desk.cpp.obj
 
 .PHONY : desk.obj
@@ -373,9 +346,6 @@ help:
 	@echo ... animation.obj
 	@echo ... animation.i
 	@echo ... animation.s
-	@echo ... camera.obj
-	@echo ... camera.i
-	@echo ... camera.s
 	@echo ... desk.obj
 	@echo ... desk.i
 	@echo ... desk.s

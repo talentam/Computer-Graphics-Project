@@ -9,11 +9,6 @@ CMakeFiles/project.dir/animation.cpp.obj: ../include/gl/glut.h
 CMakeFiles/project.dir/animation.cpp.obj: ../animation.cpp
 CMakeFiles/project.dir/animation.cpp.obj: ../desk.h
 CMakeFiles/project.dir/animation.cpp.obj: ../main.h
-CMakeFiles/project.dir/animation.cpp.obj: ../room.h
-
-CMakeFiles/project.dir/camera.cpp.obj: ../include/gl/freeglut_std.h
-CMakeFiles/project.dir/camera.cpp.obj: ../include/gl/glut.h
-CMakeFiles/project.dir/camera.cpp.obj: ../camera.cpp
 
 CMakeFiles/project.dir/desk.cpp.obj: ../include/gl/freeglut_std.h
 CMakeFiles/project.dir/desk.cpp.obj: ../include/gl/glut.h

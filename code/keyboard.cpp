@@ -1,11 +1,27 @@
-//
-// Created by GIGABYTE on 2020/11/21.
-//
 #include <gl/glut.h>
 #include "main.h"
 #include "monitor.h"
 #include "animation.h"
 #include <stdio.h>
+
+// control the keyboard interaction
+
+// keyboard interaction instruction:
+// up: camera goes forward
+// down: camera goes backward
+// left: camera goes left
+// right: camera goes right
+// 0: return the camera to original position
+// 1: camera goes up
+// 2: camera goes down
+// a-z: display a-z letters
+// ,: display ','
+// .: display '.'
+// space key: display ' '
+// 7: open drawers
+// 8: close drawers
+
+
 
 void SpecialKey(GLint key,GLint x,GLint y)
 {
@@ -40,7 +56,6 @@ void SpecialKey(GLint key,GLint x,GLint y)
             glLoadIdentity();
             eye_x += cameraSpeed;
             lookAt_x += cameraSpeed;
-//            printf("eye_x: %d, eye_y %d eye_z %d\n", eye_x, eye_y, eye_z);
             gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
             glutPostRedisplay();
             break;
@@ -68,9 +83,8 @@ void previousPosition(void){
     }
 }
 
+// update the screen display
 void update(int letter){
-//    printf("update letter: %d\n", letterList[currentLetter_X][currentLetter_Y]);
-//    printf("X %d   Y %d\n", currentLetter_X, currentLetter_Y);
     if(letter == 0){     //backspace
         previousPosition();
         letterList[currentLetter_Y][currentLetter_X] = 0;
@@ -286,43 +300,13 @@ void KeyBoards(unsigned char key,int x,int y)
         case '8':
             trigger = -1;
             break;
-//        case '=':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            angle += 10;
-//            glutPostRedisplay();
-//            break;
-//        case '-':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            angle -= 10;
-//            glutPostRedisplay();
-//            break;
-//        case 'j':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            lookAt_x -= cameraSpeed;
-//            lookAt_z += cameraSpeed;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
-//        case 'k':
-//            glMatrixMode(GL_MODELVIEW);
-//            glLoadIdentity();
-//            lookAt_x += cameraSpeed;
-//            lookAt_z += cameraSpeed;
-//            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-//            glutPostRedisplay();
-//            break;
         case '0':
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
-            eye_x = -50;
+            eye_x = 10;
             eye_y = 0;
-            eye_z = 300;
-            lookAt_x = -50;
+            eye_z = 350;
+            lookAt_x = 10;
             lookAt_y = 0;
             lookAt_z = 0;
             up_x = 0;
@@ -332,6 +316,5 @@ void KeyBoards(unsigned char key,int x,int y)
             glutPostRedisplay();
             break;
     }
-//    printf("%f %f %f %f %f %f\n", eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z);
 }
 

@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/Texture.cpp" "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/cmake-build-debug/CMakeFiles/project.dir/Texture.cpp.obj"
   "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/animation.cpp" "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/cmake-build-debug/CMakeFiles/project.dir/animation.cpp.obj"
-  "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/camera.cpp" "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/cmake-build-debug/CMakeFiles/project.dir/camera.cpp.obj"
   "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.cpp" "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/cmake-build-debug/CMakeFiles/project.dir/desk.cpp.obj"
   "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/keyboard.cpp" "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/cmake-build-debug/CMakeFiles/project.dir/keyboard.cpp.obj"
   "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.cpp" "D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/cmake-build-debug/CMakeFiles/project.dir/main.cpp.obj"

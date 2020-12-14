@@ -1,6 +1,3 @@
-//
-// Created by GIGABYTE on 2020/11/21.
-//
 #include <gl/glut.h>
 
 #ifndef PROJECT_MAIN_H
@@ -16,14 +13,12 @@ extern GLfloat up_x;
 extern GLfloat up_y;
 extern GLfloat up_z;
 extern GLfloat cameraSpeed;
-//extern GLfloat angle;
 
 extern float Hour;
 extern float Minute;
 extern float Second;
 
 void display(void);
-//void reshape(int w, int Hour);
 void init(void);
 int main(int argc,char* argv[]);
 

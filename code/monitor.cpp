@@ -1,12 +1,3 @@
-//
-// Created by GIGABYTE on 2020/11/19.
-//
-
-/////////////////
-//原点translate(1.4, 0.2, 0)可以到屏幕左上角
-/////////////////
-
-
 #include <gl/glut.h>
 #include <stdio.h>
 #include "main.h"
@@ -23,6 +14,7 @@ GLint letterList[15][20];
 
 GLint *writing[30];         //store how to write one letter pixel by pixel
 
+// the display of the letters
 GLint Blank[6][6] = {{0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0, 0},
@@ -234,6 +226,7 @@ GLint Dot[6][6] = {{0, 0, 0, 0, 0, 0},
                       {0, 0, 0, 0, 0, 0}};
 
 void initMonitor(void){
+    //initialize the monitor to blank
     for(int i = 0; i < height; i++){
         for(int j = 0; j < width; j++){
             letterList[i][j] = 0;
@@ -270,8 +263,6 @@ void initMonitor(void){
     writing[27] = &Space[0][0];
     writing[28] = &Comma[0][0];
     writing[29] = &Dot[0][0];
-
-
 }
 
 // draw single box contain one letter
@@ -303,41 +294,26 @@ void drawBox(int letter){
 
 // the monitor consists of 20*15 boxes.
 void drawScreen(void){
-    glTranslatef(0, 0, 0.5);
-    for(int i = 0; i < height+2; i++){
-        glPushMatrix();
-        glTranslatef(0, -i*boxSideLen, 0);
-        for(int j = 0; j < width+2; j++){
-            glTranslatef(boxSideLen, 0,0);
-            if(i == 0 | j == 0| i == height+1 | j == width+1){
-                int a = 27;
-                drawBox(a);
-            }else{
-                drawBox(letterList[i-1][j-1]);
+    glPushMatrix();
+        glTranslatef(0, 0, 0.5);
+        for(int i = 0; i < height+2; i++){
+            glPushMatrix();
+            glTranslatef(0, -i*boxSideLen, 0);
+            for(int j = 0; j < width+2; j++){
+                glTranslatef(boxSideLen, 0,0);
+                if(i == 0 | j == 0| i == height+1 | j == width+1){
+                    int a = 27;
+                    drawBox(a);
+                }else{
+                    drawBox(letterList[i-1][j-1]);
+                }
             }
+            glPopMatrix();
         }
-        glPopMatrix();
-    }
+    glPopMatrix();
 }
 
-//void drawRoom(void){
-//    glColor3ub(255, 255, 255);
-////    glPushMatrix();
-////        glTranslatef(0, 0, 5);
-////        glutSolidSphere(0.1, 20, 20);
-////    glPopMatrix();
-//
-//    glBegin(GL_POLYGON);
-//    glNormal3d(0.0f, 0.0f, 1.0f);
-//    glColor3ub(255, 255, 255);
-//    glVertex3f(  -100, 100, -10 );
-//    glVertex3f(  -100, -100, -10 );
-//    glVertex3f(  100, -100, -10 );
-//    glVertex3f(  100, 100, -10 );
-//    glEnd();
-////    printf("eye_x: %d, eye_y %d eye_z %d\n", eye_x, eye_y, eye_z);
-//}
-
+//draw the boundary for the screen
 void drawBoundary(){
 
     glPushMatrix();
@@ -379,6 +355,7 @@ void drawBoundary(){
     glPopMatrix();
 }
 
+//draw the support of the monitor
 void drawSupport(void){
     glPushMatrix();
         glTranslatef(0.2, 1.4, 0);
@@ -399,22 +376,15 @@ void drawSupport(void){
 }
 
 void drawMonitor(void){
-//    printf("eye_x: %f, eye_y %f eye_z %f\n", eye_x, eye_y, eye_z);
     glPushMatrix();
         glScalef(1.5, 1.5, 1.5);
         glTranslatef(-40, 29, 10);
-//        glPushMatrix();
-//            drawRoom();
-//        glPopMatrix();
-        glPushMatrix();
-            drawScreen();
-        glPopMatrix();
-        glPushMatrix();
-            drawBoundary();
-        glPopMatrix();
-        glPushMatrix();
-            drawSupport();
-        glPopMatrix();
+        //draw the screen which can display letters
+        drawScreen();
+        //draw the boundary the screen
+        drawBoundary();
+        //draw the support of the monitor
+        drawSupport();
     glPopMatrix();
 }
 
