@@ -72,6 +72,6 @@ int main(int argc,char* argv[]){
     glutKeyboardFunc(&KeyBoards);
     glutSpecialFunc(&SpecialKey);
     glutDisplayFunc(&display);
-    glutTimerFunc(1000/60, clockAni, 0);
+    glutTimerFunc(1000/60, animation, 0);
     glutMainLoop();
 }

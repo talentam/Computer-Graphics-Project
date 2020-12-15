@@ -4,6 +4,6 @@
 extern int trigger;
 void clockAnimation(void);
 void drawerAnimation(void);
-void clockAni(int value);
+void animation(int value);
 
 #endif //PROJECT_ANIMATION_H

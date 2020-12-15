@@ -27,7 +27,7 @@ void drawerAnimation(void){
     }
 }
 
-void clockAni(int value)
+void animation(int value)
 {
     // clock animation
     clockAnimation();
@@ -36,5 +36,5 @@ void clockAni(int value)
     // recall the display function
     glutPostRedisplay();
     // call the animation function in 60 fps
-    glutTimerFunc(1000/60, clockAni, 1);
+    glutTimerFunc(1000/60, animation, 1);
 }
