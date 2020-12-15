@@ -18,6 +18,10 @@
 // ,: display ','
 // .: display '.'
 // space key: display ' '
+// 3: camera turns left
+// 4: camera turns right
+// 5: camera turns up
+// 6: camera turns down
 // 7: open drawers
 // 8: close drawers
 
@@ -291,6 +295,38 @@ void KeyBoards(unsigned char key,int x,int y)
             glLoadIdentity();
             eye_y -= cameraSpeed;
             lookAt_y -= cameraSpeed;
+            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            glutPostRedisplay();
+            break;
+        case '3':
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
+            eye_x += cameraSpeed;
+            lookAt_x -= cameraSpeed;
+            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            glutPostRedisplay();
+            break;
+        case '4':
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
+            eye_x -= cameraSpeed;
+            lookAt_x += cameraSpeed;
+            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            glutPostRedisplay();
+            break;
+        case '5':
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
+            eye_y += cameraSpeed;
+            lookAt_y -= cameraSpeed;
+            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            glutPostRedisplay();
+            break;
+        case '6':
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
+            eye_y -= cameraSpeed;
+            lookAt_y += cameraSpeed;
             gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
             glutPostRedisplay();
             break;

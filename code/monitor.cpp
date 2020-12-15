@@ -10,7 +10,7 @@ GLint currentLetter_X = 0;  //record the current letter X coordinate
 GLint currentLetter_Y = 0;  //record the current letter Y coordinate
 GLint currentLetter_num = 0;
 GLint currentLetter = 0;    //record what is the current letter
-GLint letterList[15][20];
+GLint letterList[15][20];   //record the display state of the screen
 
 GLint *writing[30];         //store how to write one letter pixel by pixel
 

@@ -47,18 +47,15 @@ void init(void)
     // lighting settings
     glShadeModel(GL_SMOOTH);
     glEnable(GL_COLOR_MATERIAL);
-    GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat mat_shininess[] = { 50.0 };
     GLfloat light_position[] = { 50.0, 250.0, 200, 0.0 };
     GLfloat white_light[] = { 1, 1, 1, 1.0 };
     GLfloat Light_Model_Ambient[] = { 0.9, 0.9, 0.9, 1.0 };
 
-    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
 
     glLightfv(GL_LIGHT0, GL_POSITION, light_position);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, white_light);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, white_light);
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, Light_Model_Ambient);
 
     glEnable(GL_LIGHTING);
