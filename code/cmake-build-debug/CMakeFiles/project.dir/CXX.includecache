@@ -32,31 +32,23 @@ freeglut_std.h
 
 D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/animation.h
 
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.h
-string
--
-
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/keyboard.h
-
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.cpp
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/keyboard.cpp
 stdio.h
 -
 gl/glut.h
 -
+main.h
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h
 monitor.h
 D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/monitor.h
-keyboard.h
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/keyboard.h
-desk.h
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/desk.h
-room.h
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/room.h
-windows.h
--
 animation.h
 D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/animation.h
+math.h
+-
+
+D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/main.h
+gl/glut.h
+-
 
 D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/monitor.h
-
-D:/new file/semester7&8/Computer Graphics/CourseWork3/Computer-Graphics-Project/code/room.h
 

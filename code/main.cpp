@@ -16,7 +16,7 @@ GLfloat lookAt_z = 0;
 GLfloat up_x = 0;
 GLfloat up_y = 1;
 GLfloat up_z = 0;
-GLfloat cameraSpeed = 5;
+GLfloat cameraSpeed = 3;
 
 // clock time
 extern float Hour = 0;
@@ -71,6 +71,8 @@ int main(int argc,char* argv[]){
     init();
     glutKeyboardFunc(&KeyBoards);
     glutSpecialFunc(&SpecialKey);
+    glutMouseFunc(&Mouse);
+    glutMotionFunc(&motion);
     glutDisplayFunc(&display);
     glutTimerFunc(1000/60, animation, 0);
     glutMainLoop();

@@ -1,66 +1,107 @@
+#include <stdio.h>
 #include <gl/glut.h>
 #include "main.h"
 #include "monitor.h"
 #include "animation.h"
-#include <stdio.h>
+#include <math.h>
+float update_x = 0.0f, update_y = 0.0f, update_z = -1.0f;
+float angle1 = 0;
+float angle2 = 0;
 
-// control the keyboard interaction
+// record the coordinate of x and y when user press mouse
+GLfloat oldx_leftkey;
+GLfloat oldy_leftkey;
+GLfloat oldx_rightkey;
+GLfloat oldy_rightkey;
 
-// keyboard interaction instruction:
-// up: camera goes forward
-// down: camera goes backward
-// left: camera goes left
-// right: camera goes right
-// 0: return the camera to original position
-// 1: camera goes up
-// 2: camera goes down
-// a-z: display a-z letters
-// ,: display ','
-// .: display '.'
-// space key: display ' '
-// 3: camera turns left
-// 4: camera turns right
-// 5: camera turns up
-// 6: camera turns down
-// 7: open drawers
-// 8: close drawers
+// camera moves forward and backward
+void camera_forward_backward(int direction){
+    glLoadIdentity();
+    eye_x = eye_x + direction * (update_x) * cameraSpeed;
+    eye_z = eye_z + direction * (update_z) * cameraSpeed;
+    gluLookAt(eye_x, eye_y, eye_z, eye_x + update_x, eye_y + update_y, eye_z + update_z, 0.0f, 1.0f, 0.0f);
+}
 
+// camera moves left and right
+void camera_left_right(int direction){
+    glLoadIdentity();
+    eye_x = eye_x + direction * (update_z) * cameraSpeed;
+    eye_z = eye_z - direction * (update_x) * cameraSpeed;
+    gluLookAt(eye_x, eye_y, eye_z, eye_x + update_x, eye_y + update_y, eye_z + update_z, 0.0f, 1.0f, 0.0f);
+}
 
+// camera moves up and down
+void camera_up_down(int direction){
+    glLoadIdentity();
+    eye_y = eye_y + direction * cameraSpeed;
+    gluLookAt(eye_x, eye_y, eye_z, eye_x + update_x, eye_y + update_y, eye_z + update_z, 0.0f, 1.0f, 0.0f);
+}
 
-void SpecialKey(GLint key,GLint x,GLint y)
-{
-    switch (key)
-    {
+// detect mouse, 1 for leftkey 0 for rightkey
+int left = 1;
+void Mouse(int button, int state, int x, int y){
+    if (button == GLUT_LEFT_BUTTON){
+        if (state == GLUT_DOWN){
+            oldx_leftkey = x;
+            oldy_leftkey = y;
+            left = 1;
+        }
+    }
+    if (button == GLUT_RIGHT_BUTTON){
+        if (state == GLUT_DOWN){
+            oldx_rightkey = x;
+            oldy_rightkey = y;
+            left = 0;
+        }
+    }
+}
+
+//capture the motion of the mouse
+void motion(int x, int y){
+    glLoadIdentity();
+    if(left == 1){
+        GLint deltax = -(oldx_leftkey - x);
+        GLint deltay = (oldy_leftkey - y);
+
+        oldx_leftkey = x;
+        oldy_leftkey = y;
+
+        angle1 += deltax * 0.01;
+        update_x = sin(angle1);
+        update_z = -cos(angle1);
+
+        angle2 += deltay * 0.01;
+        update_y = sin(angle2);
+    }
+    if(left == 0){
+        GLint deltax2 = -(oldx_rightkey - x);
+        GLint deltay2 = -(oldy_rightkey - y);
+        oldx_rightkey = x;
+        oldy_rightkey = y;
+
+        eye_x += deltax2*0.12;
+        eye_z += deltay2 * 0.12;
+    }
+    gluLookAt(eye_x, eye_y, eye_z, eye_x + update_x, eye_y + update_y, eye_z + update_z, 0.0f, 1.0f, 0.0f);
+}
+
+// camera movement
+void SpecialKey(GLint key,GLint x,GLint y){
+    switch (key){
         case GLUT_KEY_UP:
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_z -= cameraSpeed;
-            lookAt_z -= cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            camera_forward_backward(1);
             glutPostRedisplay();
             break;
         case GLUT_KEY_DOWN:
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_z += cameraSpeed;
-            lookAt_z += cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            camera_forward_backward(-1);
             glutPostRedisplay();
             break;
         case GLUT_KEY_LEFT:
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_x -= cameraSpeed;
-            lookAt_x -= cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            camera_left_right(1);
             glutPostRedisplay();
             break;
         case GLUT_KEY_RIGHT:
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_x += cameraSpeed;
-            lookAt_x += cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            camera_left_right(-1);
             glutPostRedisplay();
             break;
     }
@@ -98,10 +139,8 @@ void update(int letter){
     }
 }
 
-void KeyBoards(unsigned char key,int x,int y)
-{
-    switch (key)
-    {
+void KeyBoards(unsigned char key,int x,int y){
+    switch (key){
         case 'a':
             currentLetter = 1;
             currentLetter_num++;
@@ -283,51 +322,11 @@ void KeyBoards(unsigned char key,int x,int y)
             glutPostRedisplay();
             break;
         case '1':
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_y += cameraSpeed;
-            lookAt_y += cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            camera_up_down(1);
             glutPostRedisplay();
             break;
         case '2':
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_y -= cameraSpeed;
-            lookAt_y -= cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-            glutPostRedisplay();
-            break;
-        case '3':
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_x += cameraSpeed;
-            lookAt_x -= cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-            glutPostRedisplay();
-            break;
-        case '4':
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_x -= cameraSpeed;
-            lookAt_x += cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-            glutPostRedisplay();
-            break;
-        case '5':
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_y += cameraSpeed;
-            lookAt_y -= cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
-            glutPostRedisplay();
-            break;
-        case '6':
-            glMatrixMode(GL_MODELVIEW);
-            glLoadIdentity();
-            eye_y -= cameraSpeed;
-            lookAt_y += cameraSpeed;
-            gluLookAt(eye_x, eye_y, eye_z, lookAt_x, lookAt_y, lookAt_z, up_x, up_y, up_z);
+            camera_up_down(-1);
             glutPostRedisplay();
             break;
         case '7':

@@ -7,4 +7,7 @@ void previousPosition(void);
 void update(int letter);
 void KeyBoards(unsigned char key,int x,int y);
 
+void Mouse(int button, int state, int x, int y);
+void motion(int x, int y);
+
 #endif //PROJECT_KEYBOARD_H
